@@ -2,6 +2,8 @@
 
 This smoke test uses ESP32 UART0.
 
+![UART0 wiring diagram](assets/uart0_wiring_diagram.svg)
+
 ## Runtime Wiring
 
 Use crossed UART wiring:

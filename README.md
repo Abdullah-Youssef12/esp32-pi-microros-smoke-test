@@ -35,6 +35,8 @@ The first ESP32 ACK may be `-1`. That is normal: it means the ESP32 publisher is
 
 Use 3.3 V UART only.
 
+![UART0 wiring diagram](docs/assets/uart0_wiring_diagram.svg)
+
 ```text
 Pi TX / GPIO14 / physical pin 8  -> ESP32 RX0 / GPIO3
 Pi RX / GPIO15 / physical pin 10 <- ESP32 TX0 / GPIO1
@@ -86,6 +88,42 @@ Then run:
 cd ~/boudy/esp32-pi-microros-smoke-test
 source /opt/ros/jazzy/setup.bash
 /usr/bin/python3 pi_microros_pubsub_node.py
+```
+
+## Known Passed Result
+
+This was the successful output captured during the hardware bring-up:
+
+```text
+RX /esp32_ack: -1
+TX /pi_count: 1
+RX /esp32_ack: 1
+TX /pi_count: 2
+RX /esp32_ack: 2
+TX /pi_count: 3
+RX /esp32_ack: 3
+TX /pi_count: 4
+RX /esp32_ack: 4
+TX /pi_count: 5
+RX /esp32_ack: 5
+TX /pi_count: 6
+RX /esp32_ack: 6
+TX /pi_count: 7
+RX /esp32_ack: 7
+TX /pi_count: 8
+RX /esp32_ack: 8
+TX /pi_count: 9
+RX /esp32_ack: 9
+TX /pi_count: 10
+RX /esp32_ack: 10
+TX /pi_count: 11
+```
+
+Topic echo sample after the node ran:
+
+```text
+data: 11
+---
 ```
 
 ## Important UART0 Rule

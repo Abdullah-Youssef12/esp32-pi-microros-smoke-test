@@ -16,6 +16,8 @@ When TX and RX match, the ROS 2 link is bidirectional.
 
 Use 3 jumper wires:
 
+![UART0 wiring diagram](assets/uart0_wiring_diagram.svg)
+
 ```text
 Pi physical pin 8  / GPIO14 / TXD -> ESP32 RX0 / GPIO3
 Pi physical pin 10 / GPIO15 / RXD <- ESP32 TX0 / GPIO1

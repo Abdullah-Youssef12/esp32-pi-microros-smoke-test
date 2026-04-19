@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="620" viewBox="0 0 1100 620" role="img" aria-labelledby="title desc">
+  <title id="title">Raspberry Pi to ESP32 UART0 wiring</title>
+  <desc id="desc">Pi TX GPIO14 pin 8 connects to ESP32 RX0 GPIO3. Pi RX GPIO15 pin 10 connects to ESP32 TX0 GPIO1. Pi GND connects to ESP32 GND.</desc>
+  <defs>
+    <style>
+      .bg { fill: #0b1220; }
+      .board { fill: #111c2e; stroke: #5ee0aa; stroke-width: 4; rx: 18; }
+      .pin { fill: #1d2d46; stroke: #8ab4f8; stroke-width: 3; rx: 8; }
+      .title { fill: #e8eef8; font: 700 34px Arial, sans-serif; }
+      .label { fill: #e8eef8; font: 700 22px Arial, sans-serif; }
+      .small { fill: #aebbd0; font: 18px Arial, sans-serif; }
+      .wire-tx { stroke: #ffcc66; stroke-width: 9; fill: none; stroke-linecap: round; }
+      .wire-rx { stroke: #68e0ff; stroke-width: 9; fill: none; stroke-linecap: round; }
+      .wire-gnd { stroke: #d6d6d6; stroke-width: 9; fill: none; stroke-linecap: round; }
+      .arrow { fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .note { fill: #5ee0aa; font: 700 18px Arial, sans-serif; letter-spacing: 2px; }
+    </style>
+    <marker id="arrow-yellow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#ffcc66"/>
+    </marker>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#68e0ff"/>
+    </marker>
+    <marker id="arrow-gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#d6d6d6"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" width="1100" height="620"/>
+  <text class="note" x="54" y="58">MICRO-ROS UART0 SMOKE TEST</text>
+  <text class="title" x="54" y="106">Raspberry Pi to ESP32 wiring</text>
+  <text class="small" x="54" y="142">Use 3.3 V UART only. Do not connect Pi 5 V to ESP32 RX/TX.</text>
+
+  <rect class="board" x="72" y="190" width="335" height="300"/>
+  <text class="title" x="116" y="242">Raspberry Pi</text>
+  <text class="small" x="116" y="274">GPIO header</text>
+
+  <rect class="pin" x="112" y="315" width="245" height="48"/>
+  <text class="label" x="132" y="346">TXD / GPIO14 / Pin 8</text>
+
+  <rect class="pin" x="112" y="385" width="245" height="48"/>
+  <text class="label" x="132" y="416">RXD / GPIO15 / Pin 10</text>
+
+  <rect class="pin" x="112" y="455" width="245" height="48"/>
+  <text class="label" x="132" y="486">GND</text>
+
+  <rect class="board" x="692" y="190" width="335" height="300"/>
+  <text class="title" x="751" y="242">ESP32</text>
+  <text class="small" x="751" y="274">UART0 pins</text>
+
+  <rect class="pin" x="742" y="315" width="235" height="48"/>
+  <text class="label" x="766" y="346">RX0 / GPIO3</text>
+
+  <rect class="pin" x="742" y="385" width="235" height="48"/>
+  <text class="label" x="766" y="416">TX0 / GPIO1</text>
+
+  <rect class="pin" x="742" y="455" width="235" height="48"/>
+  <text class="label" x="766" y="486">GND</text>
+
+  <path class="wire-tx arrow" marker-end="url(#arrow-yellow)" d="M 357 339 C 480 300, 612 300, 742 339"/>
+  <text class="label" x="474" y="297" fill="#ffcc66">Pi TX -> ESP32 RX</text>
+
+  <path class="wire-rx arrow" marker-end="url(#arrow-blue)" d="M 742 409 C 612 452, 480 452, 357 409"/>
+  <text class="label" x="464" y="475" fill="#68e0ff">ESP32 TX -> Pi RX</text>
+
+  <path class="wire-gnd arrow" marker-end="url(#arrow-gray)" d="M 357 479 C 482 552, 617 552, 742 479"/>
+  <text class="label" x="507" y="560" fill="#d6d6d6">Common ground</text>
+
+  <text class="small" x="72" y="550">During flashing: disconnect Pi TX/RX from ESP32 RX0/TX0. Reconnect for runtime.</text>
+</svg>
